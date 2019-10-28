@@ -12,6 +12,10 @@ set( JMSD_INCLUDED_PROJECT_SOURCE_ROOT ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/google
 set( JMSD_THIS_PROJECT_HEADER_ROOT ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/googlemock/include )
 set( JMSD_THIS_PROJECT_SOURCE_ROOT ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/googlemock/src )
 
+list( APPEND ${PROJECT_NAME}_TEST_SOURCE_DIRS_VAR ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/googletest/test )
+list( APPEND ${PROJECT_NAME}_TEST_SOURCE_DIRS_VAR ${JMSD_COMPONENT_SOURCE_ROOT_PATH}/googlemock/test )
+#message( STATUS "[JMSD] Test source directories: ${PROJECT_NAME}_TEST_SOURCE_DIRS_VAR: ${${PROJECT_NAME}_TEST_SOURCE_DIRS_VAR}" )
+
 
 ## include dependencies
 set( ${PROJECT_NAME}_DEPENDENCY_DIRS_VAR
@@ -88,4 +92,5 @@ target_link_libraries( ${PROJECT_NAME} ${${PROJECT_NAME}_DEPENDENCY_LIBS_VAR} )
 
 ## Expose public includes to other subprojects through cache variable.
 include( ${JMSD_CMAKE_SETTINGS_PATH}/set-expose-dependencies.cmake )
+include( ${JMSD_CMAKE_SETTINGS_PATH}/set-expose-test-source-directories.cmake )
 JMSD_SHOW_PROJECT_FOOTER()
