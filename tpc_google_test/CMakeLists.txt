@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.7.1 )
 
-project( tpc_google_test C CXX )
+project( jmsd_tpc_google_test C CXX )
 
 
 JMSD_SHOW_PROJECT_HEADER()
